@@ -1,0 +1,17 @@
+LICENSE
+README.md
+main.py
+pyproject.toml
+setup.py
+gitpatch_agent.egg-info/PKG-INFO
+gitpatch_agent.egg-info/SOURCES.txt
+gitpatch_agent.egg-info/dependency_links.txt
+gitpatch_agent.egg-info/entry_points.txt
+gitpatch_agent.egg-info/requires.txt
+gitpatch_agent.egg-info/top_level.txt
+harness/__init__.py
+harness/client.py
+harness/sandbox.py
+tests/__init__.py
+tests/sample.py
+tests/test_sample.py

@@ -1,0 +1,2 @@
+[console_scripts]
+gitpatch = main:main

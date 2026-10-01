@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: gitpatch-agent
+Version: 0.1.0
+Summary: Autonomous deterministic code repair agent built on Qwen 2.5 and Agent Skill Open Standard
+Author: Surya
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: rich>=13.7.0
+Requires-Dist: typer>=0.9.0
+Requires-Dist: pytest>=8.0.0
+Requires-Dist: pydantic>=2.0.0
+Dynamic: license-file
+
+cat << 'EOF' > README.md
+# GitPatch-Agent
+
+An autonomous, deterministic bug-fixing agent and custom model harness powered entirely by local open-weight AI (**Qwen 2.5 7B**).
+
+Built for the **Best Open-Source AI Project** challenge.
+
+---
+
+## Architecture & Challenge Compliance
+
+| Requirement | Implementation |
+|---|---|
+| **Open-Weight AI** | Runs locally on Apple Silicon via **Qwen 2.5 7B Instruct** (`qwen2.5:7b-instruct-q5_k_m`). Zero proprietary cloud APIs. |
+| **Agent Skill Open Standard** | Standard-compliant `skills/git-patcher/SKILL.md` with structured YAML frontmatter, execution instructions, and deterministic context scripts (`scripts/gather_context.sh`). |
+| **Model Harness Adaptation** | Custom Python test harness (`harness/client.py`, `harness/sandbox.py`) that enforces constrained JSON schema decoding, runtime sandboxing, and automated re-testing loops. |
+| **Open-Source License** | Licensed under the OSI-approved **MIT License**. |
+
+---
+
+## Project Structure
+
+```text
+gitpatch-agent/
+├── LICENSE
+├── README.md
+├── main.py                     # CLI entrypoint with rich UI feedback
+├── harness/
+│   ├── client.py               # Local Ollama client with schema-constrained prompts
+│   └── sandbox.py              # Test execution, bytecode suppression, and patch sandbox
+├── skills/
+│   └── git-patcher/
+│       ├── SKILL.md            # Agent Skill specification
+│       └── scripts/
+│           └── gather_context.sh # Deterministic repo context collector
+└── tests/
+    ├── sample.py               # Target application code
+    └── test_sample.py          # Validation test suite
